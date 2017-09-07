@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap Form</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="patch.css">
+        <style>
+            .highlight {
+                padding: 9px 14px;
+                margin-bottom: 14px;
+                background-color: #f7f7f9;
+                border: 1px solid #e1e1e8;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body style="margin-bottom: 30px;">
+        <div class="container">
+            <div class="page-header">
+                <h1>
+                    Bootstrap 3 Form from Zend Framework 1
+                    <small>Example 10. Horizontal form group sizes</small>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-9">
+                    <form enctype="application/x-www-form-urlencoded" class="form-horizontal" action="" method="post">
+<div class="has-feedback form-group has-success"><label for="inputSuccess2" class="optional control-label col-sm-3">Input with success</label>
+<div class="col-sm-9">
+<input type="text" name="inputSuccess2" id="inputSuccess2" value="" dimensionLabel="sm-3" dimensionControls="sm-9" class="form-control"><span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span></div></div></form>                    <hr>
+                    <div class="highlight">
+                        <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Application_Form_Example10&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Twitter_Bootstrap3_Form_Horizontal
+<br /></span><span style="color: #007700">{
+<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">init</span><span style="color: #007700">()
+<br />&nbsp;&nbsp;&nbsp;&nbsp;{
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'text'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'inputSuccess2'</span><span style="color: #007700">,&nbsp;array(
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'label'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Input&nbsp;with&nbsp;success'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'success'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionLabel'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'sm-3'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionControls'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'sm-9'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;));
+<br />&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />}</span>
+</span>
+</code>                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="list-group">
+                        <a class="list-group-item" href="index.html">All Elements</a>
+                        <a class="list-group-item" href="example_01.html"><small>Example 1.</small> Basic example</a>
+                        <a class="list-group-item" href="example_02.html"><small>Example 2.</small> Inline form</a>
+                        <a class="list-group-item" href="example_03.html"><small>Example 3.</small> With input group addon</a>
+                        <a class="list-group-item" href="example_04.html"><small>Example 4.</small> Horizontal form</a>
+                        <a class="list-group-item" href="example_05.html"><small>Example 5.</small> Checkboxes and radios</a>
+                        <a class="list-group-item" href="example_06.html"><small>Example 6.</small> Disabled state</a>
+                        <a class="list-group-item" href="example_07.html"><small>Example 7.</small> Readonly state</a>
+                        <a class="list-group-item" href="example_08.html"><small>Example 8.</small> Validation states</a>
+                        <a class="list-group-item" href="example_09.html"><small>Example 9.</small> With optional icons</a>
+                        <a class="list-group-item active" href="example_10.html"><small>Example 10.</small> Horizontal form group sizes</a>
+                        <a class="list-group-item" href="example_11.html"><small>Example 11.</small> Optional icons in inline forms</a>
+                        <a class="list-group-item" href="example_12.html"><small>Example 12.</small> Horizontal form group sizes</a>
+                        <a class="list-group-item" href="example_13.html"><small>Example 13.</small> Multicolumns horizontal form</a>
+                        <a class="list-group-item" href="example_14.html"><small>Example 14.</small> Checkboxes and radios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap Form</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="patch.css">
+        <style>
+            .highlight {
+                padding: 9px 14px;
+                margin-bottom: 14px;
+                background-color: #f7f7f9;
+                border: 1px solid #e1e1e8;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body style="margin-bottom: 30px;">
+        <div class="container">
+            <div class="page-header">
+                <h1>
+                    Bootstrap 3 Form from Zend Framework 1
+                    <small>Example 13. Multicolumns horizontal form</small>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-9">
+                    <form enctype="multipart/form-data" class="row form-horizontal" action="" method="post">
+<div class="col-md-6"><div class="form-group"><label for="input1" class="optional control-label col-md-3">Input 1</label>
+<div class="col-md-9">
+<input type="text" name="input1" id="input1" value="" dimension="md-6" dimensionLabel="md-3" dimensionControls="md-9" class="form-control"></div></div></div>
+<div class="col-md-6"><div class="form-group"><label for="input2" class="optional control-label col-md-3">Input 2</label>
+<div class="col-md-9">
+<input type="text" name="input2" id="input2" value="" dimension="md-6" dimensionLabel="md-3" dimensionControls="md-9" class="form-control"></div></div></div>
+<div class="col-md-6"><div class="form-group"><div class="col-md-9 col-md-offset-3"><div class="checkbox"><label>
+<input type="hidden" name="checkbox3" value="0"><input type="checkbox" name="checkbox3" id="checkbox3" value="1" dimension="md-6" dimensionLabel="md-3" dimensionControls="md-9">
+Checkbox 3</label></div></div></div></div>
+<div class="col-md-6"><div class="form-group"><label for="input4" class="optional control-label col-md-3">Input 4</label>
+<div class="col-md-9">
+<input type="text" name="input4" id="input4" value="" dimension="md-6" dimensionLabel="md-3" dimensionControls="md-9" class="form-control"></div></div></div>
+<div class="col-md-6"><div class="form-group"><label for="select5" class="optional control-label col-md-3">Select 5</label>
+<div class="col-md-9">
+<select name="select5" id="select5" dimension="md-6" dimensionLabel="md-3" dimensionControls="md-9" class="form-control">
+    
+</select></div></div></div>
+<div class="col-md-6"><div class="form-group"><label for="file6" class="optional control-label col-md-4">Upload file:</label>
+<div class="col-md-8 form-control-static">
+<input type="hidden" name="MAX_FILE_SIZE" value="2097152" id="MAX_FILE_SIZE">
+<input type="file" name="file6" id="file6" dimension="md-6" dimensionLabel="md-4" dimensionControls="md-8"></div></div></div>
+<div class="col-md-6"><div class="form-group"><div class="col-md-9 col-md-offset-3">
+<input type="submit" name="submit" id="submit" value="submit" dimension="md-6" dimensionLabel="md-3" dimensionControls="md-9" class="btn btn-primary"></div></div></div></form>                    <hr>
+                    <div class="highlight">
+                        <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br />
+<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Application_Form_Example13&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Twitter_Bootstrap3_Form_Horizontal
+<br /></span><span style="color: #007700">{
+<br />&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">init</span><span style="color: #007700">()
+<br />&nbsp;&nbsp;&nbsp;&nbsp;{
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addClass</span><span style="color: #007700">(</span><span style="color: #DD0000">'row'</span><span style="color: #007700">);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'text'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'input1'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'label'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Input&nbsp;1'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimension'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-6'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionLabel'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-3'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionControls'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-9'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'text'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'input2'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'label'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Input&nbsp;2'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimension'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-6'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionLabel'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-3'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionControls'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-9'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'checkbox'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'checkbox3'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'label'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Checkbox&nbsp;3'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimension'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-6'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionLabel'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-3'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionControls'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-9'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'text'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'input4'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'label'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Input&nbsp;4'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimension'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-6'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionLabel'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-3'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionControls'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-9'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'select'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'select5'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'label'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Select&nbsp;5'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimension'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-6'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionLabel'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-3'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionControls'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-9'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'file'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'file6'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'label'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Upload&nbsp;file:'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimension'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-6'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionLabel'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-4'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionControls'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-8'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'submit'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'submit'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimension'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-6'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionLabel'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-3'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'dimensionControls'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'md-9'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+<br />}</span>
+</span>
+</code>                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="list-group">
+                        <a class="list-group-item" href="index.html">All Elements</a>
+                        <a class="list-group-item" href="example_01.html"><small>Example 1.</small> Basic example</a>
+                        <a class="list-group-item" href="example_02.html"><small>Example 2.</small> Inline form</a>
+                        <a class="list-group-item" href="example_03.html"><small>Example 3.</small> With input group addon</a>
+                        <a class="list-group-item" href="example_04.html"><small>Example 4.</small> Horizontal form</a>
+                        <a class="list-group-item" href="example_05.html"><small>Example 5.</small> Checkboxes and radios</a>
+                        <a class="list-group-item" href="example_06.html"><small>Example 6.</small> Disabled state</a>
+                        <a class="list-group-item" href="example_07.html"><small>Example 7.</small> Readonly state</a>
+                        <a class="list-group-item" href="example_08.html"><small>Example 8.</small> Validation states</a>
+                        <a class="list-group-item" href="example_09.html"><small>Example 9.</small> With optional icons</a>
+                        <a class="list-group-item" href="example_10.html"><small>Example 10.</small> Horizontal form group sizes</a>
+                        <a class="list-group-item" href="example_11.html"><small>Example 11.</small> Optional icons in inline forms</a>
+                        <a class="list-group-item" href="example_12.html"><small>Example 12.</small> Horizontal form group sizes</a>
+                        <a class="list-group-item active" href="example_13.html"><small>Example 13.</small> Multicolumns horizontal form</a>
+                        <a class="list-group-item" href="example_14.html"><small>Example 14.</small> Checkboxes and radios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    </body>
+</html>

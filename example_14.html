@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap Form</title>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="patch.css">
+        <style>
+            .highlight {
+                padding: 9px 14px;
+                margin-bottom: 14px;
+                background-color: #f7f7f9;
+                border: 1px solid #e1e1e8;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+    <body style="margin-bottom: 30px;">
+        <div class="container">
+            <div class="page-header">
+                <h1>
+                    Bootstrap 3 Form from Zend Framework 1
+                    <small>Example 14. Checkboxes and radios</small>
+                </h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-9">
+                    <form enctype="application/x-www-form-urlencoded" class="form-vertical" action="" method="post">
+<div class="form-group">
+<label class="checkbox-inline"><input type="checkbox" name="checkbox1[]" id="checkbox1-1" value="1"> One</label><label class="checkbox-inline disabled"><input type="checkbox" name="checkbox1[]" id="checkbox1-2" value="2" disabled="disabled"> Two</label></div>
+<div class="form-group">
+<label class="radio-inline"><input type="radio" name="radio2" id="radio2-1" value="1"> One</label><label class="radio-inline disabled"><input type="radio" name="radio2" id="radio2-2" value="2" disabled="disabled"> Two</label></div>
+<div class="form-group"><div class="checkbox"><label>
+<input type="hidden" name="checkbox3" value="0"><input type="checkbox" name="checkbox3" id="checkbox3" value="1">
+checkbox</label></div></div>
+<div class="form-group"><div class="checkbox disabled"><label>
+<input type="hidden" name="checkbox4" value="0"><input type="checkbox" name="checkbox4" id="checkbox4" value="1" disabled="1">
+checkbox</label></div></div>
+<div class="form-group">
+<div class="checkbox"><label><input type="checkbox" name="checkbox5[]" id="checkbox5-1" value="1"> One</label></div><div class="checkbox disabled"><label><input type="checkbox" name="checkbox5[]" id="checkbox5-2" value="2" disabled="disabled"> Two</label></div></div>
+<div class="form-group">
+<div class="radio"><label><input type="radio" name="radio6" id="radio6-1" value="1"> One</label></div><div class="radio disabled"><label><input type="radio" name="radio6" id="radio6-2" value="2" disabled="disabled"> Two</label></div></div></form>                    <hr>
+                    <div class="highlight">
+                        <code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php
+<br />
+<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Application_Form_Example14&nbsp;</span><span style="color: #007700">extends&nbsp;</span><span style="color: #0000BB">Twitter_Bootstrap3_Form_Vertical
+<br /></span><span style="color: #007700">{
+<br />&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;</span><span style="color: #0000BB">init</span><span style="color: #007700">()
+<br />&nbsp;&nbsp;&nbsp;&nbsp;{
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'multiCheckbox'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'checkbox1'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'multiOptions'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'1'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'One'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'2'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Two'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'disable'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'2'</span><span style="color: #007700">],
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'inline'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'radio'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'radio2'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'multiOptions'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'1'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'One'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'2'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Two'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'disable'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'2'</span><span style="color: #007700">],
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'inline'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'checkbox'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'checkbox3'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'label'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'checkbox'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'checkedValue'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'1'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'uncheckedValue'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'0'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'checkbox'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'checkbox4'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'label'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'checkbox'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'checkedValue'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'1'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'uncheckedValue'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'0'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'disabled'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'multiCheckbox'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'checkbox5'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'multiOptions'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'1'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'One'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'2'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Two'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'disable'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'2'</span><span style="color: #007700">],
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">addElement</span><span style="color: #007700">(</span><span style="color: #DD0000">'radio'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'radio6'</span><span style="color: #007700">,&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'multiOptions'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'1'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'One'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'2'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">'Two'</span><span style="color: #007700">,
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #DD0000">'disable'&nbsp;</span><span style="color: #007700">=&gt;&nbsp;[</span><span style="color: #DD0000">'2'</span><span style="color: #007700">],
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+<br />&nbsp;&nbsp;&nbsp;&nbsp;}
+<br />
+<br />}
+<br /></span>
+</span>
+</code>                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="list-group">
+                        <a class="list-group-item" href="index.html">All Elements</a>
+                        <a class="list-group-item" href="example_01.html"><small>Example 1.</small> Basic example</a>
+                        <a class="list-group-item" href="example_02.html"><small>Example 2.</small> Inline form</a>
+                        <a class="list-group-item" href="example_03.html"><small>Example 3.</small> With input group addon</a>
+                        <a class="list-group-item" href="example_04.html"><small>Example 4.</small> Horizontal form</a>
+                        <a class="list-group-item" href="example_05.html"><small>Example 5.</small> Checkboxes and radios</a>
+                        <a class="list-group-item" href="example_06.html"><small>Example 6.</small> Disabled state</a>
+                        <a class="list-group-item" href="example_07.html"><small>Example 7.</small> Readonly state</a>
+                        <a class="list-group-item" href="example_08.html"><small>Example 8.</small> Validation states</a>
+                        <a class="list-group-item" href="example_09.html"><small>Example 9.</small> With optional icons</a>
+                        <a class="list-group-item" href="example_10.html"><small>Example 10.</small> Horizontal form group sizes</a>
+                        <a class="list-group-item" href="example_11.html"><small>Example 11.</small> Optional icons in inline forms</a>
+                        <a class="list-group-item" href="example_12.html"><small>Example 12.</small> Horizontal form group sizes</a>
+                        <a class="list-group-item" href="example_13.html"><small>Example 13.</small> Multicolumns horizontal form</a>
+                        <a class="list-group-item active" href="example_14.html"><small>Example 14.</small> Checkboxes and radios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    </body>
+</html>
